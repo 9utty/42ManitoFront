@@ -1,6 +1,8 @@
 import { UserDto } from "@/Types/UserTypes";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
+// User RTKQuery 코드
+
 export const userApi = createApi({
   reducerPath: "userApi",
   baseQuery: fetchBaseQuery({ baseUrl: "/" }),
