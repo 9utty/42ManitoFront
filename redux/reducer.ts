@@ -6,5 +6,3 @@ export const rootReducer = combineReducers({
   global: GlobalSlice.reducer,
   mento: MentoCardSlice.reducer,
 });
-
-export type RootState = ReturnType<typeof rootReducer>;
