@@ -8,9 +8,8 @@ export const store = configureStore({
     rootReducers: rootReducer,
     [userApi.reducerPath]: userApi.reducer,
   },
-  middleware: (getDefaultMiddleware) => {
-    getDefaultMiddleware().concat(userApi.middleware);
-  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(userApi.middleware),
 });
 
 export type AppDispatch = typeof store.dispatch;
