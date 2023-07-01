@@ -1,6 +1,17 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import AppLayout from "./global/AppLayout";
-import { Image, Grid, Row, Col, Rate, Divider, Button, Statistic } from "antd";
+import {
+  Image,
+  Grid,
+  Row,
+  Col,
+  Rate,
+  Divider,
+  Button,
+  Statistic,
+  Avatar,
+} from "antd";
 import MuiRate from "./global/MuiRate";
 import ProfileUpdate from "./profiles/ProfileSetting";
 
@@ -122,7 +133,6 @@ const Profile = (props: ProfileProps) => {
         </Col>
         <Divider />
       </Row>
-      <ProfileUpdate />
     </AppLayout>
   );
 };

@@ -6,7 +6,7 @@ const ProfileUpdate = () => {
   return (
     <AppLayout>
       <Row>
-        <div></div>
+        <div>프로필업데이트</div>
       </Row>
     </AppLayout>
   );
