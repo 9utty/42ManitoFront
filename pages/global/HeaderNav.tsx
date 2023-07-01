@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import Link from "next/link";
 import { Menu, Input, Drawer } from "antd";
 import { FaRegUser } from "react-icons/fa";
 import { HiHashtag, HiMenu } from "react-icons/hi";
-import Router from "next/router";
+import Router, { useRouter } from "next/router";
 import SearchInput from "./InputSearch";
 
 const HeaderNav = () => {
   const [visible, setVisible] = useState(false);
+  const router = useRouter();
 
   const showDrawer = () => {
     setVisible(true);
@@ -17,8 +18,20 @@ const HeaderNav = () => {
     setVisible(false);
   };
 
-  const handleSearch = (value: string) => {
-    Router.push(`/search/${value}`);
+  const openProfile = () => {
+    router.push({ pathname: "/Profile" });
+  };
+
+  const openCategory = () => {
+    router.push({ pathname: "/Category" });
+  };
+
+  const openRanking = () => {
+    router.push({ pathname: "/Ranking" });
+  };
+
+  const openFeedbackLog = () => {
+    router.push({ pathname: "/FeedbackLog" });
   };
 
   return (
@@ -39,19 +52,17 @@ const HeaderNav = () => {
             </a>
           </Link>
         </Menu.Item>
-        <Menu.Item>
+        <Menu.Item onClick={openCategory}>
           <Link href="/Category" passHref legacyBehavior>
             <a style={{ display: "inline-block", paddingTop: "13px" }}>
               <HiHashtag style={{ fontSize: "25px" }} />
             </a>
           </Link>
         </Menu.Item>
-        <Menu.Item>
-          <Link href="/Profile" passHref legacyBehavior>
-            <a style={{ display: "inline-block", paddingTop: "13px" }}>
-              <FaRegUser style={{ fontSize: "25px" }} />
-            </a>
-          </Link>
+        <Menu.Item onClick={openProfile}>
+          <a style={{ display: "inline-block", paddingTop: "13px" }}>
+            <FaRegUser style={{ fontSize: "25px" }} />
+          </a>
         </Menu.Item>
         <Menu.Item onClick={showDrawer}>
           <a style={{ display: "inline-block", paddingTop: "13px" }}>
@@ -68,16 +79,13 @@ const HeaderNav = () => {
         open={visible}
       >
         <Menu>
-          <Menu.Item>
-            <Link href="/ranking/Ranking" passHref legacyBehavior>
-              <a onClick={onClose}>랭킹</a>
-            </Link>
+          <Menu.Item onClick={openRanking}>
+            <a onClick={onClose}>랭킹</a>
           </Menu.Item>
-          <Menu.Item>
-            <Link href="/feedbackLog/FeedbackLog" passHref legacyBehavior>
-              <a onClick={onClose}>후기</a>
-            </Link>
+          <Menu.Item onClick={openFeedbackLog}>
+            <a onClick={onClose}>후기</a>
           </Menu.Item>
+          <Menu.Item></Menu.Item>
         </Menu>
       </Drawer>
       <Menu theme="dark" mode="horizontal" multiple={true}>
