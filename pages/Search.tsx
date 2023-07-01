@@ -1,8 +1,8 @@
-import AppLayout from "../global/components/AppLayout";
+import AppLayout from "./global/AppLayout";
 import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
-import { mockUsers } from "../test/mockUsers";
-import MentorCard from "../global/components/MentorCard";
+import { mockUsers } from "./test/mockUsers";
+import MentorCard from "./global/MentorCard";
 import { Row, Col, Spin, Divider } from "antd";
 import InfiniteScroll from "react-infinite-scroll-component";
 

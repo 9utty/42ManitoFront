@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { Menu, Divider, Row, Col } from "antd";
-import Category from "../Category";
+import Category from "../../Category";
 import StudyCategory from "./StudyCategory";
 import HobbyCategory from "./HobbyCategory";
 

@@ -1,8 +1,7 @@
 import React from "react";
-import AppLayout from "../global/components/AppLayout";
+import AppLayout from "../global/AppLayout";
 import { Image, Grid, Row, Col, Rate, Divider, Button, Statistic } from "antd";
-import MuiRate from "../global/components/MuiRate";
-import ProfileUpdate from "./components/ProfileSetting";
+import MuiRate from "../global/MuiRate";
 
 const { useBreakpoint } = Grid;
 
@@ -10,7 +9,7 @@ interface ProfileProps {
   isMy: boolean;
 }
 
-const MyProfile = (props: ProfileProps) => {
+const MentorProfile = (props: ProfileProps) => {
   const screens = useBreakpoint();
   const imageSize = screens.xs ? 140 : 200;
   return (
@@ -64,6 +63,17 @@ const MyProfile = (props: ProfileProps) => {
             </div>
           </Col>
         </Row>
+        <Col xs={24} sm={24}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Button>Conect</Button>
+          </div>
+        </Col>
         <Divider />
         <Col xs={24} sm={24}>
           <div
@@ -83,7 +93,7 @@ const MyProfile = (props: ProfileProps) => {
             >
               Mentor
             </div>
-            <MuiRate IsReadOnly={true} Value={2.5} />
+            <MuiRate IsReadOnly={true} Value={1} />
           </div>
         </Col>
         <Col xs={24} sm={24}>
@@ -104,7 +114,7 @@ const MyProfile = (props: ProfileProps) => {
             >
               Mentee
             </div>
-            <MuiRate IsReadOnly={true} Value={4.5} />
+            <MuiRate IsReadOnly={true} Value={0.2} />
           </div>
         </Col>
         <Divider />
@@ -122,9 +132,8 @@ const MyProfile = (props: ProfileProps) => {
         </Col>
         <Divider />
       </Row>
-      <ProfileUpdate />
     </AppLayout>
   );
 };
 
-export default MyProfile;
+export default MentorProfile;

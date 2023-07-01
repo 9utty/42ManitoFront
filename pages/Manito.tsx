@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Row, Col, Spin, Divider } from "antd";
 import InfiniteScroll from "react-infinite-scroll-component";
-import MentorCard from "../global/components/MentorCard";
-import { mockUsers } from "../test/mockUsers";
-import AppLayout from "../global/components/AppLayout";
-import HomeEnroll from "./components/Enroll";
+import MentorCard from "./global/MentorCard";
+import { mockUsers } from "./test/mockUsers";
+import AppLayout from "./global/AppLayout";
+import HomeEnroll from "./home/Enroll";
 
 const Manito = () => {
   const [cards, setCards] = useState(mockUsers.slice(0, 12));

@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Grid, Divider, Image } from "antd";
 import Link from "next/link";
-import MentorProfile from "@/pages/profiles/components/MentorProfile";
+import MentorProfile from "@/pages/profiles/MentorProfile";
 import { FaCrown } from "react-icons/fa";
 
 const { Meta } = Card;

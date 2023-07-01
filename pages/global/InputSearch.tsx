@@ -1,6 +1,6 @@
 import { Input } from "antd";
 import { useRouter } from "next/router";
-import Search from "../../search/Search";
+import Search from "../Search";
 
 const SearchInput = () => {
   const router = useRouter();

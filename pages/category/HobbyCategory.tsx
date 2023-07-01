@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Col } from "antd";
-import AppLayout from "../../global/components/AppLayout";
-import MentorCard from "../../global/components/MentorCard";
+import AppLayout from "../global/AppLayout";
+import MentorCard from "../global/MentorCard";
 
 const hobbyMentors = [
   {

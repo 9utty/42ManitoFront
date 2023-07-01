@@ -33,21 +33,21 @@ const HeaderNav = () => {
           className="header-menu-item"
           disabled
         >
-          <Link href="/home/Manito" passHref legacyBehavior>
+          <Link href="/Manito" passHref legacyBehavior>
             <a>
               <div style={{ fontSize: "25px", color: "#000" }}>42Manito</div>
             </a>
           </Link>
         </Menu.Item>
         <Menu.Item>
-          <Link href="/category/Category" passHref legacyBehavior>
+          <Link href="/Category" passHref legacyBehavior>
             <a style={{ display: "inline-block", paddingTop: "13px" }}>
               <HiHashtag style={{ fontSize: "25px" }} />
             </a>
           </Link>
         </Menu.Item>
         <Menu.Item>
-          <Link href="/login/Login" passHref legacyBehavior>
+          <Link href="/Profile" passHref legacyBehavior>
             <a style={{ display: "inline-block", paddingTop: "13px" }}>
               <FaRegUser style={{ fontSize: "25px" }} />
             </a>

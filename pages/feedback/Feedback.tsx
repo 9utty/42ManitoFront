@@ -1,5 +1,5 @@
 import React from "react";
-import AppLayout from "../global/components/AppLayout";
+import AppLayout from "../global/AppLayout";
 
 interface FeedbackProps {
   isMento: boolean;
