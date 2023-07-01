@@ -1,16 +1,21 @@
 import { UserResDto } from "@/Types/UserResDto";
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { baseQueryWithGlobalErrorHandler } from "@/utils/BaseQueryErrorHandler";
+import {
+  createApi,
+  fetchBaseQuery,
+  FetchBaseQueryError,
+} from "@reduxjs/toolkit/query/react";
 
 // User RTKQuery 코드
 
 export const userApi = createApi({
   reducerPath: "userApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "/" }),
+  baseQuery: baseQueryWithGlobalErrorHandler,
   endpoints: (builder) => ({
     getUser: builder.query<UserResDto, number>({
       query: (id: number) => {
         return {
-          url: `/users/${id}`,
+          url: `${process.env.NEXT_PUBLIC_SERVER_URL}/users/${id}`,
           method: "GET",
         };
       },
@@ -19,7 +24,7 @@ export const userApi = createApi({
     getUsers: builder.query<UserResDto[], { take: number; page: number }>({
       query: ({ take, page }) => {
         return {
-          url: `/users?take=${take}&page=${page}`,
+          url: `${process.env.NEXT_PUBLIC_SERVER_URL}/users?take=${take}&page=${page}`,
           method: "GET",
         };
       },
