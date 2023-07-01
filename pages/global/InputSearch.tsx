@@ -7,7 +7,7 @@ const SearchInput = () => {
 
   const handleSearch = (value: string) => {
     router.push({
-      pathname: "/search/Search",
+      pathname: "/Search",
       query: { query: value },
     });
   };
